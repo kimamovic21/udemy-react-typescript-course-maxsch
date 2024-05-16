@@ -1,0 +1,11 @@
+React & TypeScript - The Practical Guide
+
+
+Section 1: Introduction
+
+1. Welcome To The Course!
+2. Why React & TypeScript ?
+3. About The Course & Course Content
+4. How To Get The Most Out of The Course
+5. Learning Community & Course Resources
+6. Creating & Using React + TypeScript Projects
