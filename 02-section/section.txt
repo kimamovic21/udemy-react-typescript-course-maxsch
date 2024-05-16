@@ -1,0 +1,101 @@
+Section 2: TypeScript Basics & Core Concepts
+
+
+7. Module Introduction
+
+8. TypeScript Setup & Using TypeScript
+-otvorimo web stranicu https://www.typescriptlang.org/
+-otvorimo web stranicu https://nodejs.org/en
+-u terminal ukucamo komandu npm i -g typescript
+-udemo u folder cd 02-section i instaliramo typescript pakete 
+-u terminal ukucamo komandu npx tsc
+
+9. Working with Types: Type Inference & Explicit Type Annotations
+-kreiramo first-app.ts fajl
+-deklarisemo varijablu let userName
+
+10. Basic Primitive Type
+-kreiramo varijablu let userAge
+
+11. Invoking The TypeScript Compiler
+-u terminal ukucamo komandu npx tsc first-app.ts
+
+12. Combining Types Union Types (Alternative Types)
+-kreiramo varijablu let userId
+-varijabli userId dodajemo tip string | number
+
+13. Working with Object Types
+-kreiramo varijablu let user
+-varijabli let user dodajemo tip object
+-varijabli let user dodajemo { }
+-u objektu dodajemo tipove varijablama
+
+14. Working with Array Types
+-kreiramo varijablu let hobbies
+-varijabli let hobbies dodajemo tip Array<string>
+-varijabli let hobbies mozemo dodati i tip string[]
+
+15. Adding Types to Functions - Parameter & Return Value Types
+-kreiramo varijablu const API_KEY
+-kreiramo funkciju add() sa parametrima a i b
+-parametrima a i b dodajemo tipove
+-funkciji add() dodajemo tip void
+-funkciji add() mozemo dodati tip undefined
+
+16. Defining Function Types
+-kreiramo funkciju calculate() sa tri parametra
+-parametrima dodajemo tipove
+-pozivamo funkciju calculate() sa tri argumenta
+
+17. Creating Custom Types/Type Aliases
+-kreiramo tip type AddFn
+-u funkciji calculate() parametru calcFn dodajemo tip AddFn
+-kreiramo tip type StringOrNum
+-kreiramo tip type User
+
+18. Defining  Object Types with Interfaces
+-kreiramo tip interface Credentials
+-kreiramo varijablu let credentials
+-varijabli let credentials dodajemo tip Credentials
+-inicijaliziramo varijablu credentials
+
+19. Interfaces vs Custom Types
+-kreiramo klasu class AuthCredentials 
+-klasi AuthCredentials dodajemo tip implements Credentials
+-kreiramo funkciju function login()
+
+20. Merging Types
+-kreiramo tipove type Admin i type AppUser
+-kreiramo tip type AppAdmin = Admin & AppUser
+-kreiramo varijablu let admin
+-varijabli let admin dodajemo tip AppAdmin
+-inicijaliziramo varijablu admin
+-kreiramo interface Admin i AppUser
+-kreiramo interface AppAdmin 
+-interface AppAdmin dodajemo extends Admin i AppUser
+-kreiramo varijablu let admin: AppAdmin
+-inicijaliziramo varijablu admin
+
+21. Being Specific With Literal Types
+-kreiramo varijablu let role
+
+22. Adding Type Guards
+-kreiramo funkciju performAction() sa dva parametra
+-kreiramo tip type Role
+-u funkciju performAction() dodajemo uslov if (role === 'admin')
+-dodajemo uslov if (role === 'admin' && typeof action === 'string')
+
+23. Type Guards & Type Narrowing - A Closer Look
+
+24. Making Sense of Generic Types
+-kreiramo varijablu let roles
+-varijabli let roles dodajemo tip Array<Role>
+-kreiramo tip DataStorage
+-tipu DataStorage dodajemo tip parametar <T>
+-kreiramo varijablu const textStorage
+-kreiramo varijablu const userStorage
+-kreiramo funkciju merge()
+-kreiramo varijablu mergeUser
+-u terminal ukucamo komandu npx tsc first-app.ts
+
+25. Summary
