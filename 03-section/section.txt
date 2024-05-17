@@ -1,0 +1,118 @@
+Section 3: Using TypeScript with React - Essentials
+
+
+26. Module Introduction
+
+27. Creating a React + TypeScript Project
+-u terminalu instaliramo Vite React TypeScript project sa komandom npm create vite@latest .
+-sa komandom npm i instaliramo pakete
+
+28. Understanding the Role of tsconfig.json
+
+29. Building a First Component & Facing a Missing Type
+-u folderu src kreiramo folder components
+-u folderu components kreiramo komponentu CourseGoal.tsx
+-funkciji CourseGoal() dodajemo parametar props
+-u komponentu App.tsx importujemo komponentu CourseGoal.tsx
+
+30. Defining Component Props Types
+-u komponenti App.tsx komponenti CourseGoal dodajemo props title i description
+-u komponenti CourseGoal.tsx, u funkciji CourseGoal() parametru props dodajemo konfiguranioni objekt
+-destrukturiramo prop props u varijable title i description
+
+31. Storing Props Types as a Custom Type or Interface
+-u komponenti CourseGoal.tsx kreiramo tip type CourseGoalProps
+-u funkciju CourseGoal() parametrima dodajemo tip CourseGoalProps
+
+32. Defining a Type for Props with "children"
+-u komponentu CourseGoal.tsx importujemo tip ReactNode iz paketa React
+-kreiramo interface CourseGoalProps
+-u interface CourseGoalProps dodajemo varijablu children
+-varijabli children dodjeljujemo tip ReactNode
+-kreiramo tip type CourseGoalProps
+-importujemo PropsWithChildren iz paketa React
+-tipu type CourseGoalProps dodjeljujemo vrijednost Project
+-u PropsWithChildren argument dodajemo <{ title: string }>
+
+33. Component Props & The Special "key" prop
+
+34. Another Way of Typing Components
+-u komponentu CourseGoal.tsx importujemo tip FC
+-funkciji CourseGoal() dodajemo tip FC<CourseGoalProps>
+
+35. Exercise: Creating a Header Component
+-kreiramo komponentu Header.tsx
+-u komponentu App.tsx importujemo komponentu Header.tsx
+
+36. Using useState() and TypeScript
+-u komponenti App.tsx kreiramo button element Add Goal
+-button elementu dodajemo prop onClick
+-kreiramo funkciju handleAddGoal()
+-u prop onClick proslijedujemo funkciju handleAddGoal
+-importujemo React Hook funkciju useState()
+-kreiramo state varijablu goals i set funkciju setGoals
+-kreiramo tip type CourseGoal 
+-funkciji useState() dodajemo tip <CourseGoal[]>
+
+37. Working with State & Outputting State-based Values
+-u komponenti App.tsx, u funkciju handleAddGoal() dodajemo funkciju setGoals()
+-u funkciji setGoals() kreiramo varijablu const newGoal
+-u return izjavi dodajemo varijablu goals?.map()
+
+38. Another Exercise & Reusing Types Across Files
+-kreiramo komponentu CourseGoalList.tsx
+-u komponentu CourseGoalList.tsx importujemo komponentu CourseGoal.tsx
+-kreiramo tip type CourseGoalListProps
+-u komponentu App.tsx importujemo komponentu CourseGoalList
+-eksportujemo tip type CourseGoal
+-u komponentu CourseGoalList.tsx importujemo tip type CourseGoal kao CGoal
+-u tip type CourseGoalListProps dodajemo goals: CGoal[]
+
+39. Passing Functions as Values - In A Type-Safe Way
+-u komponenti App.tsx kreiramo funkciju handleDeleteGoal sa parametrom id
+-u funkciju handleDeleteGoal() dodajemo funkciju setGoals()
+-u komponenti CourseGoalList.tsx u tip type CourseGoalListProps dodajemo prop onDeleteGoal
+-u funkciji CourseGoalList() destrukturiramo prop onDeleteGoal
+-u return izjavi komponenti CourseGoal dodajemo prop onDeleteGoal
+-u prop onDeleteGoal proslijedujemo funkciju onDeleteGoal
+-u komponenti CourseGoal.tsx u tip PropsWithChildren dodajemo prop onDeleteGoal
+-u funkciji CourseGoal() destrukturiramo parametar onDeleteGoal
+-button element dodajemo dogadaj onClick
+-u dogadaj onClick proslijedujemo prop onDeleteGoal
+-u komponenti App.tsx, u return izjavi komponenti CourseGoalList dodajemo prop onDeleteGoal
+-u prop onDeleteGoal proslijedujemo funkciju handleDeleteGoal
+
+40. Handling & Typing Events
+-kreiramo komponentu NewGoal.tsx
+-u komponenti NewGoal.tsx kreiramo funkciju handleSubmit()
+-u return izjavi kreiramo form, p, label i input elemente
+-form elementu dodajemo dogadaj onSubmit
+-u dogadaj onSubmit proslijedujemo funkciju handleSubmit
+-importujemo tip FormEvent iz paketa React
+-u funkciji handleSubmit() parametru event dodajemo tip FormEvent
+-u komponentu App.tsx importujemo komponentu NewGoal.tsx
+
+41. Working with Generic Event Types
+-u funkciju handleSubmit() mozemo dodati new FormData()
+
+42. Using useRef() with TypeScript
+-importujemo React Hook useRef
+-u funkciji NewGoal() kreiramo funkciju useRef()
+-vrijednost funkcije useRef() pohranjujemo u varijable goal i summary
+-u input elemente dodajemo prop ref
+-u prop ref proslijedujemo vrijednost varijable goal i summary
+-u funkciju useRef() dodajemo null
+-u funkciji handleSubmit() kreiramo varijablu const enteredGoal
+-funkcijama useRef dodajemo <HTMLInputELement>
+-kreiramo varijablu const enteredSummary 
+
+43. Handling User Input In A Type-safe Way
+-u komponenti NewGoal.tsx kreiramo tip type NewGoalProps
+-u funkciji NewGoal() destrukturiramo parametar onAddGoal
+-u funkciju handleSubmit() dodajemo funkciju onAddGoal(enteredGoal, enteredSummary)
+-u komponenti App.tsx funkciji handleAddGoal() dodajemo parametre goal i summary
+-u return izjavi komponenti NewGoal dodajemo prop onAddGoal
+-u prop onAddGoal proslijedujemo funkciju handleAddGoal
+-u komponenti NewGoal.tsx, u funkciju handleSubmit() dodajemo event.currentTarget.reset()
+
+44. Summary

@@ -32,3 +32,26 @@ Section 2: TypeScript Basics & Core Concepts
 23. Type Guards & Type Narrowing - A Closer Look
 24. Making Sense of Generic Types
 25. Summary
+
+
+Section 3: Using TypeScript with React - Essentials
+
+26. Module Introduction
+27. Creating a React + TypeScript Project
+28. Understanding the Role of tsconfig.json
+29. Building a First Component & Facing a Missing Type
+30. Defining Component Props Types
+31. Storing Props Types as a Custom Type or Interface
+32. Defining a Type for Props with "children"
+33. Component Props & The Special "key" prop
+34. Another Way of Typing Components
+35. Exercise: Creating a Header Component
+36. Using useState() and TypeScript
+37. Working with State & Outputting State-based Values
+38. Another Exercise & Reusing Types Across Files
+39. Passing Functions as Values - In A Type-Safe Way
+40. Handling & Typing Events
+41. Working with Generic Event Types
+42. Using useRef() with TypeScript
+43. Handling User Input In A Type-safe Way
+44. Summary
