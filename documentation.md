@@ -55,3 +55,11 @@ Section 3: Using TypeScript with React - Essentials
 42. Using useRef() with TypeScript
 43. Handling User Input In A Type-safe Way
 44. Summary
+
+
+Section 4: Advanced Component Types - Dynamic Components, Polymorphic Components & More
+
+45. Module Introduction
+46. Building a More Dynamic & Flexible Component
+47. Problem: Flexible Components With Required Prop Combinations
+48. Solution: Building Components with Discriminated Unions
