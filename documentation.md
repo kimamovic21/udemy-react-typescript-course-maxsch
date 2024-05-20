@@ -63,3 +63,17 @@ Section 4: Advanced Component Types - Dynamic Components, Polymorphic Components
 46. Building a More Dynamic & Flexible Component
 47. Problem: Flexible Components With Required Prop Combinations
 48. Solution: Building Components with Discriminated Unions
+49. Onwards To A New Project
+50. Building a Basic Wrapper Component
+51. Building Better Wrapper Components with ComponentPropsWithoudRef
+52. Building a Wrapper Component That Renders Different Elements
+53. Working with Type Predicates & Facing TypeScript Limitations
+54. Building a Basic Polymorphic Component
+55. Building a Better Polymorphic Component with Generics
+56. Examples: More Component Ideas
+57. Using forwardRef with TypeScript
+58. Building Another Wrapper Component(Custom Form Component)
+59. Sharing Logic with "unknown" & Type Casting
+60. Exposing  Component APIs with useImperativeHandle (with TypeScript)
+61. Alternative: Avoiding Type Casting with "as" 
+62. Summary

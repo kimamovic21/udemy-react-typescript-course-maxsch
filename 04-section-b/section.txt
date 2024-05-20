@@ -1,0 +1,112 @@
+Section 4: Advanced Component Types - Dynamic Components, Polymorphic Components & More
+
+
+49. Onwards To A New Project
+
+50. Building a Basic Wrapper Component
+-u folderu components kreiramo komponentu Input.tsx
+-u komponenti Input.tsx kreiramo tip type InputProps
+-u funkciji Input() destruktuiramo parametre label i id
+-parametrima label i id dodajemo tip InputProps
+
+51. Building Better Wrapper Components with ComponentPropsWithoudRef
+-u komponentu Input.tsx importujemo tip ComponentPropsWithoutRef iz paketa React
+-nakon tipa type InputProps dodajemo & ComponentPropsWithoudRef<'input'>
+
+52. Building a Wrapper Component That Renders Different Elements
+-kreiramo komponentu Button.tsx
+-kreiramo tipove type ButtonProps i type AnchorProps
+-funkciji Button dodajemo parametar props 
+-parametru props dodajemo tipove ButtonProps i AnchorProps
+-u funkciji Button() dodajemo uslov if (props.element === 'anchor')
+-importujemo tip typ ComponentPropsWithoutRef iz paketa React
+-nakon tipa type ButtonProps dodajemo & ComponentPropsWithoutRef<'button'>
+-nakon tipa type AnchorProps dodajemo & ComponentPropsWithoutRef<'a'>
+-destruktuiramo props const { element, ...otherProps }
+
+53. Working with Type Predicates & Facing TypeScript Limitations
+-u komponenti Button.tsx, u funkciji Button dodajemo uslov  if ('href' in props)
+-kreiramo funkciju isAnchorProps()
+-parametrima u funkciji isAnchorProps() dodajemo props is AnchorProps
+-u uslov if dodajemo funkciju isAnchorProps(props)
+-tipovima type ButtonProps i type AnchorProps dodajemo objekte
+
+54. Building a Basic Polymorphic Component
+-kreiramo komponentu Container.tsx
+-u komponentu Container.tsx importujemo tip type ElementType
+-kreiramo tip type ContainerProps
+-u funkciji Container() destruktuiramo parametar prop as
+-parametru as dodajemo tip ContainerProps
+-u funkciji Container() kreiramo varijablu const Component
+-u return izjavu dodajemo komponentu Component
+-u komponentu App.tsx importujemo komponentu Container
+-u return izjavu dodajemo komponentu Container
+-komponenti Container dodajemo prop as
+
+55. Building a Better Polymorphic Component with Generics
+-u komponentu Container.tsx importujemo tip type ReactNode
+-importujemo tip type ComponentPropsWithoutRef
+-u tip type ContainerProps dodajemo <T extends ElementType>
+-u funkciju Container dodajemo <C extends ElementType>
+-funkciji Container dodajemo parametar ...props
+-u return izjavi komponenti Component dodajemo prop {...props}
+
+56. Examples: More Component Ideas
+
+57. Using forwardRef with TypeScript
+-u komponentu Input.tsx importujemo funkciju forwardRef iz paketa React
+-kreiramo funkciju forwardRef() 
+-vrijednost funkcije forwardRef() pohranjujemo u varijablu const Input
+-funkciji forwardRef dodajemo <HTMLInputElement, InputProps>
+-u komponentu App.tsx importujemo funkciju useRef
+-kreiramo funkciju useRef(null)
+-u funkciju useRef dodajemo <HTMLInputElement>
+-vrijednost funkcije useRef pohranjujemo u varijablu const input
+
+58. Building Another Wrapper Component(Custom Form Component)
+-kreiramo komponentu Form.tsx
+-u komponenti Form.tsx importujemo tip type ComponentPropsWithoutRef
+-kreiramo tip type FormProps
+-u funkciji Form parametru props dodajemo tip FormProps
+-u komponentu App.tsx importujemo komponentu Form.tsx
+
+59. Sharing Logic with "unknown" & Type Casting
+-u komponentu Form.tsx importujemo tip type FormEvent
+-kreiramo funkciju handleSubmit() sa parametrom event
+-parametru event dodajemo tip FormEvent<HTMLFormElement>
+-u funkciji Form() kreiramo varijablu const formData
+-kreiramo varijablu const data
+-tipu type FormProps dodajemo & { ... }
+-dodajemo metodu props.onSave(data)
+-u komponenti App.tsx kreiramo funkciju handleSave
+-u return izjavi komponenti Form dodajemo prop onSave
+-u prop onSave proslijedujemo funkciju handleSave
+-u funkciji handleSave() kreiramo varijablu const extractedData
+
+60. Exposing  Component APIs with useImperativeHandle (with TypeScript)
+-u komponentu Form.tsx importujemo useRef()
+-kreiramo funkciju useRef
+-vrijednost funkcije useRef() pohranjujemo u varijablu const form
+-funkciji useRef dodajemo <HTMLFormElement>
+-u return izjavi elementu form dodajemo prop ref
+-u prop ref proslijedujemo varijablu form
+-u funkciji handleSubmit() dodajemo metodu form.current?.reset()
+-importujemo React Hook useImperativeHandle()
+-kreiramo funkciju useImperativeHandle()
+-importujemo React Hook forwardRef()
+-kreiramo funkciju forwardRef() 
+-vrijednost funkcije forwardRef() pohranjujemo u varijablu const Form
+-funkciji forwardRef() dodajemo drugi parametar ref
+-u funkciji useImperativeHandle() prvi argument je varijabla ref a drugi argument anonimna funkcija
+-u funkciju useImperativeHandle() dodajemo funkciju clear()
+-u funkciju clear dodajemo metodu form.current?.reset()
+-u komponenti App.tsx, importujemo i kreiramo funkciju useRef()
+-vrijednost funkcije useRef(null) pohranjujemo u varijablu const customForm
+-u funkciju handleSave() dodajemo metodu customForm.current?.clear();
+-u komponenti Form.tsx kreiramo i eksportujemo tip FormHandle
+-u funkciju forwardRef dodajemo <FormHandle, FormProps>
+-u komponenti App.tsx funkciji useRef dodajemo <FormHandle>
+
+61. Alternative: Avoiding Type Casting with "as" 
+
+62. Summary
