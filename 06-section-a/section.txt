@@ -1,0 +1,36 @@
+Section 6: Side Effects, useEffect() & Data Fetching with TypeScript
+
+73. Module Introduction
+
+74. Creating a First Side Effect
+-u komponenti Timer.tsx kreiramo funkciju setInterval()
+-kreiramo i importujemo funkciju useState()
+-u return izjavi kreiramo progress element
+-vrijednost funkcije useState() pohranjujemo u varijable remainingTime i setRemainingTime
+-u funkciju setInterval() dodajemo funkciju setRemainingTime()
+-elementu progress dodajemo prop max i value
+
+75. Using useEffect() with TypeScript
+-u komponenti Timer.tsx importujemo i kreiramo funkciju useEffect()
+-kreiramo varijablu const formattedRemainingTime
+-varijablu const formattedRemainingTime dodajemo u return izjavu u p element
+-u Function useEffect() dodajemo funkciju setInterval()
+
+76. Managing An Interval With Refs & The Effect Cleanup Function
+-u komponentu Timer.tsx importujemo i kreiramo funkciju useRef()
+-vrijednost funkcije useRef() pohranjujemo u varijablu const interval
+-u funkciju useEffect() dodajemo metodu interval.current
+-dodajemo uslov if (remainingTime <= 0 && interval.current)
+-u uslov if dodajemo funkciju clearInterval()
+-u funkciji useEffect(), vrijednost funkcije setInterval() pohranjujemo u varijablu const timer
+-u return izjavu dodajemo anonimnu funkciju
+-dodajemo metodu interval.current = timer
+
+77. useEffect() & Its Dependencies
+-u komponentu Timer.tsx importujemo i kreiramo funkciju useTimersContext()
+-vrijednost funkcije useTimersContext() pohranjujemo u varijablu const { isRunning }
+-dodajemo uslov if (isRunning)
+-dodajemo uslov else if (interval.current)
+-umjesto varijable const timer kreiramo varijablu let timer
+
+78. A Small Bug & Its Solution

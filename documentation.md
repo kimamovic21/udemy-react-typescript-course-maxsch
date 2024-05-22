@@ -91,3 +91,13 @@ Section 5: Advanced Type-Safe State with Context API & useReducer()
 70. Changing State via the Reducer Function
 71. Using Better Action Types
 72. Wiring Everything Up & Finishig the App
+
+
+Section 6: Side Effects, useEffect() & Data Fetching with TypeScript
+
+73. Module Introduction
+74. Creating a First Side Effect
+75. Using useEffect() with TypeScript
+76. Managing An Interval With Refs & The Effect Cleanup Function
+77. useEffect() & Its Dependencies
+78. A Small Bug & Its Solution
