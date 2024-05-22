@@ -1,0 +1,38 @@
+Section 6: Side Effects, useEffect() & Data Fetching with TypeScript
+
+79. Onwards to Data Fetching!
+
+80. Building a Utility "get" Function with TypeScript
+-u folderu src kreiramo folder util
+-u folderu util kreiramo http.ts fajl
+-u http.ts fajlu kreiramo i eksportujemo funkciju get()
+
+81. Fetching & Transforming Data
+-u komponentu App.tsx importujemo i kreiramo funkciju get()
+-importujemo i kreiramo funkciju useState()
+-kreiramo varijable const [fetchedPosts, setFetfchedPosts]
+-importujemo tip BlogPost
+-funkciji useState() dodajemo tip <BlogPost[]>
+-importujemo i kreiramo funkciju useEffect
+-u funkciji useEffect() kreiramo asinhronu funkciju fetchPosts()
+-kreiramo tip type RawDataBlogPost 
+-u komponentu App.tsx importujemo komponentu BlogPosts
+-u return izjavi komponenti BlogPosts dodajemo prop posts
+-importujemo tip type ReactNode
+-kreiramo varijablu let content
+-varijabli let content dodajemo tip ReactNode
+-dodajemo uslov if (fetchedPosts)
+
+82. Alternative: Using the "zod" Library for Response Data Validation
+
+83. Alternative: A Generic "get" Function
+
+84. Handling Loading & Error States
+-kreiramo varijable const [isFetching, setIsFetching] 
+-u funkciju fetchPosts() dodajemo funkciju setIsFetching(true)
+-dodajemo uslov if (isFetching)
+-u funkciju fetchedPosts() dodajemo blokove koda try - catch
+-kreiramo varijable const [error, setError] 
+-u blok koda catch() dodajemo uslov if (error instanceof Error)
+-dodajemo uslov if (error) 
+-importujemo komponentu ErrorMessage.tsx

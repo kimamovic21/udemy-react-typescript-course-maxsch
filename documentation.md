@@ -101,3 +101,9 @@ Section 6: Side Effects, useEffect() & Data Fetching with TypeScript
 76. Managing An Interval With Refs & The Effect Cleanup Function
 77. useEffect() & Its Dependencies
 78. A Small Bug & Its Solution
+79. Onwards to Data Fetching!
+80. Building a Utility "get" Function with TypeScript
+81. Fetching & Transforming Data
+82. Alternative: Using the "zod" Library for Response Data Validation
+83. Alternative: A Generic "get" Function
+84. Handling Loading & Error States
