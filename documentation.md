@@ -77,3 +77,17 @@ Section 4: Advanced Component Types - Dynamic Components, Polymorphic Components
 60. Exposing  Component APIs with useImperativeHandle (with TypeScript)
 61. Alternative: Avoiding Type Casting with "as" 
 62. Summary
+
+
+Section 5: Advanced Type-Safe State with Context API & useReducer()
+
+63. Module Introduction
+64. The Starting Project
+65. Creating a Context & Fitting Types
+66. Creating a Type-Safe Provider Component
+67. Accessing Context Type-Safe With A Custom Hook
+68. Getting Started with useReducer() & TypeScript
+69. A Basic Reducer Function & A Basic Action Type
+70. Changing State via the Reducer Function
+71. Using Better Action Types
+72. Wiring Everything Up & Finishig the App

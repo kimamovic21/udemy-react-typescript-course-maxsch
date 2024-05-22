@@ -1,0 +1,79 @@
+Section 5: Advanced Type-Safe State with Context API & useReducer()
+
+63. Module Introduction
+
+64. The Starting Project
+
+65. Creating a Context & Fitting Types
+-u folderu src kreiramo folder store
+-u folderu store kreiramo komponentu timers-context.tsx
+-u komponentu timers-context.tsx importujemo funkciju createContext
+-kreiramo funkciju createContext()
+-vrijednost funkcije createContext() pohranjujemo u varijablu const TimersContext
+-kreiramo tipove type Timer, type TimersState, type TimersContextValue 
+-u tip type TimersContextValue dodajemo TimersState & { ... }
+-funkciji createContext dodajemo <TimersContextValue | null>
+
+66. Creating a Type-Safe Provider Component
+-u komponenti timers-context.tsx kreiramo funkciju TimersContextProvider()
+-kreiramo tip type TimersContextProviderProps
+-funkciji TimersContextProvider() dodajemo parametar destruktuirani prop chidlren
+-parametru dodajemo tip TimersContextProviderProps
+-u return izjavu dodajemo komponentu TimersContext.Provider
+-u komponentu TimersContext.Provider dodajemo prop children
+-kreiramo varijablu const ctx
+-varijabli const ctx dodajemo tip TimersContextValue
+-u return izjavi komponenti TimersContext.Provider dodajemo prop value
+-u prop value proslijedujemo vrijednost varijable ctx
+-u komponentu App.tsx importujemo komponentu TimersContextProvider
+-u return izjavu dodajemo komponentu TimersContextProvider
+
+67. Accessing Context Type-Safe With A Custom Hook
+-u komponentu Header.tsx importujemo funkciju useContext
+-kreiramo funkciju useContext()
+-vrijednost funkcije useContext() pohranjujemo u varijablu const timerCtx
+-u komponenti timers-context.tsx kreiramo i eksportujemo funkciju useTimersContext()
+-u funkciju useTimersContext() dodajemo funkciju useContext(TimersContext)
+-vrijednost funkcije useContext(TimersContext) pohranjujemo u varijablu const timersCtx
+-dodajemo uslov if (timersCtx === null) 
+-u komponentu Header.tsx importujemo funkciju useTimersContext
+-kreiramo funkciju useTimersContext()
+-vrijednost funkcije useTimersContext() pohranjujemo u varijablu const timersCtx
+-u return izjavi u komponentu Button dodajemo ternarni uslov timerCtx.isRunning
+
+68. Getting Started with useReducer() & TypeScript
+-u komponentu timers-context.tsx importujemo funkciju useReducer
+-kreiramo funkciju useReducer()
+-kreiramo varijablu const initialState
+
+69. A Basic Reducer Function & A Basic Action Type
+-u komponenti timers-context.tsx, vrijednost funkcije useReducer() pohranjujemo u varijable timersState i dispatch
+-kreiramo funkciju timersReducer() sa dva parametra state i action
+-kreiramo tip type Action
+-u funkcije addTimer, startTimers i stopTimers dodajemo funkcije dispatch()
+
+70. Changing State via the Reducer Function
+-u komponenti timers-context.tsx, u funkciju timersReducer() dodajemo uslov if (action.type === 'START_TIMERS')
+-dodajemo jos dva uslova za STOP_TIMERS i ADD_TIMER
+
+71. Using Better Action Types
+-u komponenti timers-context.tsx kreiramo tri tipa type StartTimersAction, type StopTimersAction, type AddTimerAction
+-u tip type Action dodajemo prethodno kreiramo tri tipa
+
+72. Wiring Everything Up & Finishig the App
+-u komponenti Header, u return izjavi komponenti Button dodajemo prop onClick
+-u prop onClick dodajemo ternarni uslov timerCtx.isRunning
+-u komponentu AddTimer.tsx importujemo funkciju useTimersContext 
+-kreiramo funkciju useTimersContext()
+-vrijednost funkcije useTimersContext() pohranjujemo u varijablu const {addTimer}
+-u funkciju handleSaveTimer() dodajemo funkciju addTimer({ ... })
+-u komponenti Timer.tsx importujemo tip type TimerProps 
+-funkciji Timer() dodajemo destruktuirane parametre name i duration
+-parametrima dodajemo tip TimerProps
+-u komponentu Timers.tsx importujemo funkciju useTimersContext
+-kreiramo funkciju useTimersContext()
+-vrijednost funkcije useTimersContext pohranjujemo u varijablu const { timers } 
+-importujemo komponentu Timer.tsx
+-u return izjavi dodajemo varijablu timers 
+-varijabli dodajemo metodu timers?.map()
+-u return izjavi komponenti Timer dodajemo prop {...timer}
