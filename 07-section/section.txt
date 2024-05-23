@@ -1,0 +1,89 @@
+Section 7: Using Redux with TypeScript
+
+85. Module Introduction
+
+86. The Starting Project
+
+87. Redux Setup
+-u terminal ukucamo komandu npm i @reduxjs/toolkit react-redux
+
+88. Creating a Redux Store & A First Slice
+-u folderu src kreiramo folder redux
+-u folderu redux kreiramo store.ts fajl
+-u store.ts fajl importujemo i kreiramo funkciju configureStore()
+-u folderu redux kreiramo cartSlice.ts fajl
+-u cartSlice.ts fajlu importujemo i kreiramo funkciju createSlice()
+-vrijednost funkcije createSlice() pohranjujemo u varijablu const cartSlice
+-eksportujemo varijablu const cartSlice
+-u store.ts fajl importujemo varijablu cartSlice
+-u funkciju configureStore() dodajemo konfiguracioni objekt reducer
+
+89. Setting a State Type
+-u cartSlice.ts fajlu kreiramo tipove type CartItem i type CartState
+-kreiramo varijablu const initialState
+-varijabli initialState dodajemo tip CartState
+-u funkciju createSlice(), u objektu reducers kreiramo funkcije addToCart() i removeFromCart()
+
+90. A First Reducer & Controlling the Action Payload Type
+-u cartSlice.ts fajl importujemo tip type PayloadAction
+-funkciji addToCart() dodajemo parametre state i action
+-parametru action dodajemo tip PayloadAction
+-tipu PayloadAction dodajemo tip konfiguracioni objekt
+
+91. Adding Logic To The Reducer
+-u cartSlice.ts fajlu, u funkciji addToCart() kreiramo varijablu const itemIndex
+-dodajemo uslov if (itemIndex >= 0)
+-dodajemo uslov else
+-funkciji removeFromCart() dodajemo parametre state i action
+-u funkciji removeFromCart() kreiramo varijablu const itemIndex
+-dodajemo uslov if (state.items[itemIndex].quantity === 1)
+-dodajemo uslov else
+
+92. Providing the Redux Store
+-u store.js fajlu vrijednost funkcije configureStore() pohranjujemo u varijablu const store
+-eksportujemo varijablu const store
+-u komponentu App.tsx importujemo komponentu Provider iz paketa React Redux
+-importujemo varijablu store
+-komponenti Provider dodajemo prop store
+-u prop store proslijedujemo vrijednost varijable store
+
+93. Dispatching Actions & Adjusting the useDispatch Hook
+-u cartSlice.ts fajlu eksportujemo funkcije addToCart i removeFromCart kao cartSlice.actions
+-u komponenti Product.tsx importujemo i kreiramo funkciju useDispatch()
+-vrijednost funkcije useDispatch() pohranjujemo u varijablu const dispatch
+-importujemo funkciju addToCart
+-u funkciju handleAddToCart() dodajemo funkciju dispatch(addToCart({ ... }))
+-u store.ts fajlu kreiramo i eksportujemo tip type AppDispatch
+-kreiramo hooks.ts file
+-u hooks.ts fajl importujemo funkciju useDispatch i tip AppDispatch
+-kreiramo tip type DispatchFunction
+-kreiramo i eksportujemo varijablu const useCartDispatch
+-u komponentu Product.tsx importujemo funkciju useCartDispatch
+
+94. Creating a Type-Safe useSelector Hook
+-u hooks.ts file importujemo funkciju useSelector
+-importujemo tip type TypedUseSelectorHook 
+-kreiramo i eksportujemo varijablu const useCartSelector
+-u store.ts fajlu kreiramo i eksportujemo tip ype RootState
+-u hooks.ts fajl importujemo tip RootState
+
+95. Selecting & Transforming Redux Store Data
+-u komponentu Header.tsx importujemo i kreiramo funkciju useCartSelector()
+-vrijednost funkcije useCartSelector() pohranjujemo u varijablu const cartQuantity
+
+96. Finishing Touches & Summary
+-u komponentu CartItems.tsx importujemo i kreiramo funkciju useCartSelector()
+-vrijednost funkcije useCartSelector() pohranjujemo u varijablu const cartItems
+-kreiramo varijable const totalPrice i const formattedTotalPrice
+-u cartSlice.ts fajlu eksportujemo tip type CartItem
+-u komponentu CartItems.tsx importujemo tip type CartItem
+-kreiramo funkciju handleAddToCart()
+-importujemo i kreiramo funkciju useCartDispatch()
+-importujemo funkcije addToCart i removeFromCart
+-vrijednost funkcije useCartDispatch() pohranjujemo u varijablu const dispatch
+-u funkciju handleAddToCart() dodajemo funkciju dispatch(addToCart(item))
+-kreiramo funkciju handleRemoveFromCart() sa parametrom id
+-u funkciju handleRemoveFromCart dodajemo funkciju dispatch(removeFromCart())
+-u return izjavu dodajemo uslov {cartItems.length === 0 && <p></p>}
+-dodajemo uslov {cartItems.length > 0 <ul>...</ul>}
+ 

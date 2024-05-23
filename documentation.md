@@ -107,3 +107,19 @@ Section 6: Side Effects, useEffect() & Data Fetching with TypeScript
 82. Alternative: Using the "zod" Library for Response Data Validation
 83. Alternative: A Generic "get" Function
 84. Handling Loading & Error States
+
+
+Section 7: Using Redux with TypeScript
+
+85. Module Introduction
+86. The Starting Project
+87. Redux Setup
+88. Creating a Redux Store & A First Slice
+89. Setting a State Type
+90. A First Reducer & Controlling the Action Payload Type
+91. Adding Logic To The Reducer
+92. Providing the Redux Store
+93. Dispatching Actions & Adjusting the useDispatch Hook
+94. Creating a Type-Safe useSelector Hook
+95. Selecting & Transforming Redux Store Data
+96. Finishing Touches & Summary
